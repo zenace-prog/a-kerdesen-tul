@@ -52,17 +52,20 @@
 
         <form
           class="contact-form"
-          name="kapcsolat"
           method="POST"
-          action="/kapcsolat-koszonjuk.html"
-          data-netlify="true"
-          netlify-honeypot="bot-field"
+          action="https://api.web3forms.com/submit"
         >
-          <input type="hidden" name="form-name" value="kapcsolat" />
-          <div hidden>
+          <input
+            type="hidden"
+            name="access_key"
+            value="7c162796-d454-43b9-b7ea-c2bcc5933e63"
+          />
+          <input type="hidden" name="subject" value="Új üzenet – A kérdésen túl" />
+          <input type="hidden" name="from_name" value="A kérdésen túl weboldal" />
+          <div class="visually-hidden" aria-hidden="true">
             <label>
               Ezt a mezőt hagyd üresen:
-              <input name="bot-field" tabindex="-1" autocomplete="off" />
+              <input name="botcheck" tabindex="-1" autocomplete="off" />
             </label>
           </div>
           <div class="form-field">
@@ -98,6 +101,7 @@
             ></textarea>
           </div>
           <button class="contact-submit" type="submit">Üzenet küldése</button>
+          <p class="form-status" role="status" aria-live="polite"></p>
           <p class="form-note">
             Minden mező kitöltése kötelező. Az üzenet legfeljebb 5 000 karakter
             lehet.
@@ -105,8 +109,8 @@
           <p class="form-note">
             Az adatkezelő Varga Gábor. A nevedet, e-mail-címedet és üzenetedet
             jogos érdek alapján, a megkeresés megválaszolására használom; az
-            űrlap beküldését a Netlify Forms dolgozza fel. Adatkezelési
-            kérdésben, illetve jogaid gyakorlásához ezen az űrlapon is írhatsz.
+            űrlap beküldését a Web3Forms dolgozza fel. Adatkezelési kérdésben,
+            illetve jogaid gyakorlásához ezen az űrlapon is írhatsz.
           </p>
         </form>
 

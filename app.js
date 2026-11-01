@@ -1,5 +1,52 @@
 const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#primary-navigation');
+const contactForm = document.querySelector('.contact-form');
+
+if (contactForm) {
+  const submitButton = contactForm.querySelector('button[type="submit"]');
+  const statusMessage = contactForm.querySelector('.form-status');
+
+  if (submitButton && statusMessage) {
+    contactForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      statusMessage.textContent = '';
+      statusMessage.removeAttribute('data-state');
+
+      const originalButtonText = submitButton.textContent;
+      submitButton.textContent = 'Küldés...';
+      submitButton.disabled = true;
+
+      try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+          method: 'POST',
+          body: new FormData(contactForm),
+        });
+        const result = await response.json();
+
+        if (!response.ok || !result.success) {
+          statusMessage.textContent =
+            typeof result.message === 'string'
+              ? `Hiba: ${result.message}`
+              : 'Nem sikerült elküldeni az üzenetet. Kérjük, próbáld újra.';
+          statusMessage.dataset.state = 'error';
+          return;
+        }
+
+        contactForm.reset();
+        statusMessage.textContent = 'Köszönöm, az üzeneted sikeresen megérkezett.';
+        statusMessage.dataset.state = 'success';
+      } catch (error) {
+        console.error('A kapcsolatfelvételi űrlap beküldése sikertelen.', error);
+        statusMessage.textContent =
+          'Nem sikerült elküldeni az üzenetet. Ellenőrizd az internetkapcsolatot, majd próbáld újra.';
+        statusMessage.dataset.state = 'error';
+      } finally {
+        submitButton.textContent = originalButtonText;
+        submitButton.disabled = false;
+      }
+    });
+  }
+}
 
 if (menuToggle && navigation) {
   const closeMenu = () => {
