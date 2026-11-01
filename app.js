@@ -32,9 +32,7 @@ if (contactForm) {
           return;
         }
 
-        contactForm.reset();
-        statusMessage.textContent = 'Köszönöm, az üzeneted sikeresen megérkezett.';
-        statusMessage.dataset.state = 'success';
+        window.location.assign('kapcsolat-koszonjuk.html');
       } catch (error) {
         console.error('A kapcsolatfelvételi űrlap beküldése sikertelen.', error);
         statusMessage.textContent =

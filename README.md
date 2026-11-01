@@ -2,9 +2,9 @@
 
 Varga Gábor könyvének reszponzív bemutatóoldala. A könyvrészlet és a kapcsolatfelvétel külön oldalon érhető el.
 
-A kapcsolatfelvételi űrlap Netlify Forms szolgáltatást használ. Netlify-on történő telepítés után kapcsold be az űrlapbeküldési értesítéseket a Netlify felületén, és végezz tesztbeküldést.
+A kapcsolatfelvételi űrlap a Web3Forms szolgáltatást használja. A beküldést az `app.js` `fetch` kéréssel kezeli; sikeres küldés után a látogató a köszönőoldalra kerül, hiba esetén pedig az üzenet az űrlap alatt jelenik meg. A fogadó e-mail-címet a Web3Forms felületén állítsd be, majd tesztelj HTTP(S)-en kiszolgált oldalon (például VS Code Live Serverrel), ne közvetlenül a `file://` címmel megnyitott fájlból.
 
-Az űrlap alatti rövid adatkezelési szöveg nem helyettesíti a teljes adatkezelési tájékoztatót. Élesítés előtt pontosítsd a megőrzési időt, a Netlify adatfeldolgozási feltételeit és az érintetti jogok gyakorlásának módját, majd tedd közzé a részletes tájékoztatót.
+Az űrlap alatti rövid adatkezelési szöveg nem helyettesíti a teljes adatkezelési tájékoztatót. Élesítés előtt pontosítsd a megőrzési időt, a Web3Forms adatfeldolgozási feltételeit és az érintetti jogok gyakorlásának módját, majd tedd közzé a részletes tájékoztatót.
 
 ## Futtatás
 
@@ -14,8 +14,8 @@ Nyisd meg az `index.html` fájlt a böngészőben, vagy használd a VS Code Live
 
 - `index.html` – a könyv és a szerző bemutatása
 - `reszlet.html` – külön oldal a könyvrészletnek
-- `kapcsolat.html` – Netlify Forms alapú kapcsolatfelvételi űrlap
-- `kapcsolat-koszonjuk.html` – sikeres beküldés utáni oldal
+- `kapcsolat.html` – Web3Forms alapú kapcsolatfelvételi űrlap
+- `kapcsolat-koszonjuk.html` – külön megnyitható köszönőoldal
 - `styles.css` – reszponzív elrendezés és megjelenés
 - `app.js` – mobil navigáció
 - `images/borito.png` – a könyv borítója
