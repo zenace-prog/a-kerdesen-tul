@@ -529,18 +529,6 @@ h2 em {
   color: #ffe0ad;
 }
 
-.form-status {
-  margin: 0;
-  color: var(--gold-light);
-  font-family: var(--sans);
-  font-size: 0.9rem;
-  line-height: 1.5;
-}
-
-.form-status[data-state="error"] {
-  color: #ffb4a9;
-}
-
 .form-note {
   margin: -0.5rem 0 0;
   color: var(--muted);
@@ -709,7 +697,7 @@ h2 em {
   }
 
   .book-highlights {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .author-inner {
