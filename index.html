@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="A kérdésen túl – Varga Gábor gondolatkísérletei az emberről, a valóságról és önmagunkról."
+    />
+    <meta name="theme-color" content="#062126" />
+    <title>A kérdésen túl – Varga Gábor</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body class="home-page">
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="wordmark" href="#kezdo" aria-label="A kérdésen túl – kezdőlap">
+          <span class="wordmark-mark" aria-hidden="true">A</span>
+          <span>A kérdésen túl</span>
+        </a>
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-expanded="false"
+          aria-controls="primary-navigation"
+          aria-label="Navigáció megnyitása"
+        >
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="navigation" id="primary-navigation" aria-label="Fő navigáció">
+          <a href="#konyv">A könyvről</a>
+          <a href="#szerzo">A szerző</a>
+          <a class="nav-cta" href="reszlet.html">Részlet a könyvből</a>
+          <a href="kapcsolat.html">Kapcsolat</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero" id="kezdo" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <h1 id="hero-title">A kérdésen <em>túl</em></h1>
+          <p class="hero-subtitle">
+            Gondolatkísérletek az emberről,<br />
+            a valóságról és önmagunkról
+          </p>
+          <p class="hero-question">
+            Mi történik, amikor ugyanaz a világ egyszer csak mást kezd jelenteni?
+          </p>
+          <a class="button" href="#konyv">
+            Fedezd fel a könyvet <span aria-hidden="true">→</span>
+          </a>
+        </div>
+        <div class="hero-art" aria-label="A kérdésen túl című könyv">
+          <div class="book-mockup">
+            <span class="book-pages" aria-hidden="true"></span>
+            <img
+              class="book-cover"
+              src="images/borito.png"
+              alt="A kérdésen túl könyv borítója, Varga Gábor nevével"
+              fetchpriority="high"
+            />
+            <span class="book-spine" aria-hidden="true"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="book-section" id="konyv" aria-labelledby="book-title">
+        <div class="section-inner">
+          <div class="section-copy">
+            <p class="eyebrow"><span></span> A könyvről</p>
+            <h2 id="book-title">Ismerős történetek.<br /><em>Új felismerések.</em></h2>
+            <p>
+              Mítoszok, vallási szövegek, sci-fi történetek és hétköznapi
+              helyzetek adják a könyv kiindulópontját.
+            </p>
+            <a class="button" href="reszlet.html">
+              Olvass bele <span aria-hidden="true">→</span>
+            </a>
+          </div>
+          <aside class="book-art" aria-labelledby="book-highlights-title">
+            <h3 class="book-highlights-title" id="book-highlights-title">
+              Mit találsz a könyvben?
+            </h3>
+            <ul class="book-highlights" aria-label="A könyv tartalmi elemei">
+              <li>Novellák</li>
+              <li>Gondolatkísérletek</li>
+              <li>Értelmezések</li>
+              <li>Filozófiai reflexiók</li>
+            </ul>
+          </aside>
+        </div>
+      </section>
+
+      <section class="author-section" id="szerzo" aria-labelledby="author-title">
+        <div class="author-inner">
+          <img
+            class="author-photo"
+            src="images/fénykép.png"
+            alt="Varga Gábor szerző portréja"
+            loading="lazy"
+          />
+          <div class="author-copy">
+            <p class="eyebrow"><span></span> A szerző</p>
+            <h2 id="author-title">Varga Gábor</h2>
+            <p>
+              Szeretek egy történetnél tovább időzni annál, mint amit elsőre
+              elmond. Egy apró részlet sokszor csak később kap jelentést, amikor
+              már más kérdéssel olvasunk újra. Írás közben engem ez a figyelem
+              vezet.
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
