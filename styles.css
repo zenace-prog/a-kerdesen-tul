@@ -659,10 +659,8 @@ h2 em {
 .author-photo {
   display: block;
   width: 174px;
-  height: 145px;
+  height: auto;
   border: 1px solid var(--gold);
-  object-fit: cover;
-  object-position: center 27%;
   filter: saturate(0.76) hue-rotate(-5deg) contrast(1.09) brightness(0.97);
 }
 
@@ -706,7 +704,6 @@ h2 em {
 
   .author-photo {
     width: 200px;
-    height: 160px;
   }
 }
 
@@ -896,8 +893,6 @@ h2 em {
 
   .author-photo {
     width: 110px;
-    height: 135px;
-    object-position: center 25%;
   }
 
   .author-copy h2 {
@@ -936,7 +931,6 @@ h2 em {
 
   .author-photo {
     width: 92px;
-    height: 122px;
   }
 
 }
