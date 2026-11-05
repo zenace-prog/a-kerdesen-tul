@@ -20,12 +20,58 @@
       </div>
     </header>
     <main class="excerpt-page">
-      <figure class="excerpt-poster">
-        <img
-          src="images/reszlet_a_konyvbol.png"
-          alt="A hivatal, amely nem létezett című könyvrészlet teljes oldalas képe, az értesítés történetével és a boríték illusztrációjával"
-        />
-      </figure>
+      <div class="excerpt-layout">
+        <article class="excerpt-story" aria-labelledby="excerpt-title">
+          <p class="eyebrow"><span></span> Részlet a könyvből</p>
+          <h1 id="excerpt-title">A hivatal, amely <em>nem létezett</em></h1>
+          <p>A férfi egy reggel arra ébredt, hogy levelet kapott.</p>
+          <p>A borítékon csak ennyi állt:</p>
+          <p class="excerpt-letter-label">ÉRTESÍTÉS</p>
+          <p>Felbontotta.</p>
+          <p>
+            A levél szerint egy bizonyos hivatal megállapította róla, hogy évek
+            óta valamilyen különleges eljárás szerint él.
+          </p>
+          <p>A férfi nem emlékezett ilyen hivatalra.</p>
+          <p>
+            A levél azonban hivatalosnak tűnt. Dátum volt rajta. Ügyszám.
+            Bélyegző. Aláírás.
+          </p>
+          <p>A lap alján pedig egy mondat:</p>
+          <blockquote>
+            „Az érintettnek a továbbiakban fokozott figyelemmel kell eljárnia.”
+          </blockquote>
+          <p>A férfi sokáig nézte. Aztán elrakta.</p>
+        </article>
+
+        <figure
+          class="excerpt-illustration"
+          role="img"
+          aria-label="Értesítést tartalmazó boríték egy könyv és egy csésze mellett"
+        ></figure>
+      </div>
+
+      <details class="excerpt-original">
+        <summary>Az eredeti, teljes oldalas grafika megtekintése</summary>
+        <a
+          href="images/reszlet_a_konyvbol.png"
+          target="_blank"
+          rel="noopener"
+          aria-label="A teljes oldalas grafika megnyitása nagyobb méretben"
+        >
+          <img
+            src="images/reszlet_a_konyvbol.png"
+            alt="Az eredeti könyvrészlet-oldal teljes grafikája"
+            loading="lazy"
+          />
+        </a>
+      </details>
+
+      <footer class="excerpt-footer">
+        <p>Egy könyv. Végtelen nézőpont.</p>
+        <cite>— Varga Gábor —</cite>
+      </footer>
+
       <nav class="excerpt-navigation" aria-label="További navigáció">
         <a class="excerpt-nav-link" href="index.html#konyv">
           <span aria-hidden="true">←</span> Vissza a könyvhöz

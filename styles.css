@@ -11,7 +11,7 @@
   --gold-light: #f0ad55;
   --page-gutter: 1rem;
   --content-width: 68rem;
-  --reading-width: 48rem;
+  --reading-width: 58rem;
   --serif: "Playfair Display", Georgia, serif;
   --sans: "DM Sans", Arial, sans-serif;
 }
@@ -321,7 +321,8 @@ h2 em {
   position: relative;
   min-height: 300px;
   overflow: hidden;
-  border-block: 1px solid rgba(217, 155, 66, 0.16);
+  padding-block: 1.25rem;
+  border-block: 1px solid rgba(217, 155, 66, 0.2);
   background:
     radial-gradient(ellipse at 68% 54%, rgba(21, 86, 88, 0.55), transparent 46%),
     linear-gradient(105deg, #072328 12%, #0a3034 70%, #08282d);
@@ -454,6 +455,121 @@ h2 em {
   justify-content: flex-start;
 }
 
+.excerpt-layout {
+  display: grid;
+  width: 100%;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+.excerpt-story {
+  padding-block: 1rem;
+}
+
+.excerpt-story h1 {
+  margin: 0 0 1.2rem;
+  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.08;
+}
+
+.excerpt-story > p:not(.eyebrow) {
+  margin: 0 0 0.85rem;
+  color: #e2d9cb;
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.excerpt-story > p.excerpt-letter-label {
+  display: inline-block;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.6rem;
+  background: var(--paper);
+  color: var(--night);
+  font-family: var(--sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+}
+
+.excerpt-story blockquote {
+  margin: 0.9rem 0;
+  padding: 0.35rem 0 0.35rem 0.9rem;
+  border-left: 2px solid var(--gold);
+  color: var(--gold-light);
+  font-style: italic;
+  line-height: 1.6;
+}
+
+.excerpt-illustration {
+  min-height: 31rem;
+  margin: 0;
+  border: 1px solid rgba(217, 155, 66, 0.28);
+  border-radius: 0.45rem;
+  background-image:
+    linear-gradient(
+      90deg,
+      var(--night) 0%,
+      var(--night) 18%,
+      rgba(6, 29, 34, 0.88) 29%,
+      transparent 50%
+    ),
+    url("images/reszlet_a_konyvbol.png");
+  background-position: center, right center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%, auto 300%;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
+}
+
+.excerpt-original {
+  width: 100%;
+  margin-top: 1.25rem;
+  border-block: 1px solid rgba(217, 155, 66, 0.25);
+  color: var(--gold-light);
+  font-family: var(--sans);
+  font-size: 0.85rem;
+}
+
+.excerpt-original summary {
+  padding: 0.85rem 0;
+  cursor: pointer;
+}
+
+.excerpt-original a {
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.excerpt-original img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 0.3rem;
+}
+
+.excerpt-footer {
+  width: 100%;
+  margin-top: 1.25rem;
+  padding: 1.15rem 0;
+  border-top: 1px solid rgba(217, 155, 66, 0.5);
+  text-align: center;
+}
+
+.excerpt-footer p {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
+.excerpt-footer cite {
+  color: var(--gold-light);
+  font-family: var(--sans);
+  font-size: 0.78rem;
+  font-style: normal;
+}
+
 .contact-page {
   display: grid;
   min-height: calc(100svh - 68px);
@@ -486,6 +602,20 @@ h2 em {
   letter-spacing: -0.04em;
 }
 
+.thank-you-card {
+  width: min(100%, 38rem);
+  padding: clamp(1.5rem, 4vw, 2.75rem);
+}
+
+.thank-you-card h1 {
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+}
+
+.thank-you-card .contact-closing {
+  margin-top: 1.35rem;
+  padding-top: 1rem;
+}
+
 .contact-intro {
   max-width: 34rem;
   margin: 0;
@@ -514,12 +644,18 @@ h2 em {
 .form-field input,
 .form-field textarea {
   width: 100%;
-  padding: 0.7rem 0.8rem;
-  border: 1px solid rgba(217, 155, 66, 0.3);
-  border-radius: 0.35rem;
-  background: rgba(6, 29, 34, 0.7);
+  padding: 0.8rem 0.9rem;
+  border: 1px solid rgba(217, 155, 66, 0.24);
+  border-radius: 0.45rem;
+  background: rgba(6, 29, 34, 0.42);
   color: var(--paper);
   font: 1rem/1.5 var(--sans);
+  transition: border-color 180ms ease, background-color 180ms ease;
+}
+
+.form-field input:hover,
+.form-field textarea:hover {
+  border-color: rgba(217, 155, 66, 0.52);
 }
 
 .form-field textarea {
@@ -530,6 +666,7 @@ h2 em {
 .form-field input:focus,
 .form-field textarea:focus {
   border-color: var(--gold-light);
+  background: rgba(6, 29, 34, 0.72);
   outline: 2px solid rgba(240, 173, 85, 0.22);
   outline-offset: 1px;
 }
@@ -581,22 +718,6 @@ h2 em {
   font-size: clamp(1rem, 2.7vw, 1.2rem);
   font-style: italic;
   line-height: 1.8;
-}
-
-.excerpt-poster {
-  position: relative;
-  width: 100%;
-  margin: 0;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
-  border: 1px solid rgba(217, 155, 66, 0.28);
-  border-radius: 0.45rem;
-  line-height: 0;
-}
-
-.excerpt-poster img {
-  display: block;
-  width: 100%;
-  height: auto;
 }
 
 .excerpt-navigation {
@@ -695,6 +816,31 @@ h2 em {
 
   .author-photo {
     width: 200px;
+  }
+}
+
+@media (max-width: 760px) and (min-width: 621px) {
+  .wordmark {
+    gap: 0.6rem;
+    font-size: 0.98rem;
+  }
+
+  .navigation {
+    gap: 0.7rem;
+    font-size: 0.7rem;
+  }
+
+  .nav-cta {
+    padding-inline: 0.6rem;
+  }
+
+  .excerpt-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .excerpt-illustration {
+    min-height: 22rem;
   }
 }
 
@@ -858,6 +1004,24 @@ h2 em {
     padding: 1rem 0;
   }
 
+  .excerpt-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .excerpt-story {
+    padding-block: 0.5rem;
+  }
+
+  .excerpt-story h1 {
+    font-size: clamp(2.3rem, 9vw, 3.2rem);
+  }
+
+  .excerpt-illustration {
+    min-height: 19rem;
+    background-size: 100% 100%, auto 300%;
+  }
+
   .excerpt-header .site-header-inner {
     min-height: 60px;
   }
@@ -873,10 +1037,6 @@ h2 em {
 
   .contact-submit {
     width: 100%;
-  }
-
-  .excerpt-poster {
-    box-shadow: none;
   }
 
   .excerpt-navigation {
