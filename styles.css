@@ -455,51 +455,75 @@ h2 em {
   justify-content: flex-start;
 }
 
-.excerpt-layout {
-  display: grid;
+.full-story {
+  width: min(100%, 46rem);
+  margin-inline: auto;
+  padding-block: 1.5rem 2rem;
+}
+
+.story-image {
   width: 100%;
-  grid-template-columns: minmax(0, 46rem);
-  justify-content: center;
+  overflow: hidden;
+  margin: 0 0 2rem;
+  border: 1px solid rgba(217, 155, 66, 0.28);
+  border-radius: 0.5rem;
+  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
 }
 
-.excerpt-story {
-  padding-block: 2rem;
+.story-image img {
+  display: block;
+  width: 100%;
+  height: clamp(15rem, 34vw, 25rem);
+  object-fit: cover;
+  object-position: center 57%;
 }
 
-.excerpt-story h1 {
-  margin: 0 0 1.2rem;
-  font-size: clamp(2.3rem, 4.5vw, 3.6rem);
+.full-story > .eyebrow {
+  margin-bottom: 0.7rem;
+}
+
+.full-story h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2.6rem, 5.4vw, 4.2rem);
   font-weight: 500;
   letter-spacing: -0.04em;
-  line-height: 1.08;
+  line-height: 1.1;
 }
 
-.excerpt-story > p:not(.eyebrow) {
-  margin: 0 0 0.85rem;
+.story-copy {
   color: #e2d9cb;
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 1.05rem;
+  line-height: 1.8;
 }
 
-.excerpt-story > p.excerpt-letter-label {
-  display: inline-block;
-  margin-bottom: 1rem;
-  padding: 0.3rem 0.6rem;
+.story-copy p {
+  margin: 0 0 0.65rem;
+}
+
+.story-copy p.story-insert {
+  display: table;
+  margin: 0.5rem 0 1rem;
+  padding: 0.35rem 0.65rem;
   background: var(--paper);
   color: var(--night);
   font-family: var(--sans);
   font-size: 0.8rem;
   font-weight: 600;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.14em;
 }
 
-.excerpt-story blockquote {
-  margin: 0.9rem 0;
-  padding: 0.35rem 0 0.35rem 0.9rem;
+.story-copy blockquote {
+  margin: 1.1rem 0;
+  padding: 0.55rem 0 0.55rem 1rem;
   border-left: 2px solid var(--gold);
   color: var(--gold-light);
   font-style: italic;
   line-height: 1.6;
+}
+
+.story-copy p.story-dialogue {
+  padding-left: 0.9rem;
+  border-left: 1px solid rgba(217, 155, 66, 0.3);
 }
 
 .excerpt-footer {
@@ -787,9 +811,6 @@ h2 em {
     padding-inline: 0.6rem;
   }
 
-  .excerpt-layout {
-    grid-template-columns: 1fr;
-  }
 }
 
 @media (max-width: 620px) {
@@ -952,16 +973,20 @@ h2 em {
     padding: 1rem 0;
   }
 
-  .excerpt-layout {
-    grid-template-columns: 1fr;
+  .full-story {
+    padding-block: 0.75rem 1.5rem;
   }
 
-  .excerpt-story {
-    padding-block: 1rem;
+  .full-story h1 {
+    font-size: clamp(2.5rem, 9vw, 3.4rem);
   }
 
-  .excerpt-story h1 {
-    font-size: clamp(2.3rem, 9vw, 3.2rem);
+  .story-image {
+    margin-bottom: 1.5rem;
+  }
+
+  .story-image img {
+    height: clamp(13rem, 58vw, 20rem);
   }
 
   .excerpt-header .site-header-inner {
