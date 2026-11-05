@@ -442,52 +442,16 @@ h2 em {
   justify-items: center;
   align-content: start;
   margin-inline: auto;
-  padding: 1.5rem 0 2rem;
+  padding: 1rem 0 2rem;
   background:
     radial-gradient(ellipse at 50% 20%, rgba(21, 86, 88, 0.28), transparent 55%),
     var(--night);
 }
 
-.excerpt-text {
-  width: min(100%, 38rem);
-  padding: clamp(1.25rem, 4vw, 2.5rem);
-  border: 1px solid rgba(217, 155, 66, 0.28);
-  border-top: 2px solid rgba(217, 155, 66, 0.68);
-  border-radius: 0.45rem;
-  background: linear-gradient(
-    145deg,
-    rgba(8, 39, 44, 0.88),
-    rgba(6, 29, 34, 0.78)
-  );
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.2);
-}
-
-.excerpt-text h1 {
-  margin: 0 0 1.5rem;
-  color: var(--paper);
-  font-size: clamp(2rem, 5vw, 3rem);
-  font-weight: 500;
-  letter-spacing: -0.035em;
-  line-height: 1.15;
-}
-
-.excerpt-text p,
-.excerpt-text blockquote {
-  color: #e2d9cb;
-  font-size: clamp(1rem, 2.4vw, 1.1rem);
-  line-height: 1.85;
-}
-
-.excerpt-text p {
-  margin: 0 0 1rem;
-}
-
-.excerpt-text blockquote {
-  margin: 1.4rem 0;
-  padding: 0.15rem 0 0.15rem 1rem;
-  border-left: 2px solid var(--gold);
-  color: var(--gold-light);
-  font-style: italic;
+.excerpt-header .site-header-inner {
+  width: min(calc(100% - 2 * var(--page-gutter)), var(--reading-width));
+  min-height: 56px;
+  justify-content: flex-start;
 }
 
 .contact-page {
@@ -621,10 +585,8 @@ h2 em {
 
 .excerpt-poster {
   position: relative;
-  width: min(100%, 38rem);
-  overflow: hidden;
-  aspect-ratio: 1.2;
-  margin: 1.25rem 0 0;
+  width: 100%;
+  margin: 0;
   box-shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
   border: 1px solid rgba(217, 155, 66, 0.28);
   border-radius: 0.45rem;
@@ -633,11 +595,8 @@ h2 em {
 
 .excerpt-poster img {
   display: block;
-  width: 200%;
-  height: 100%;
-  max-width: none;
-  object-fit: cover;
-  transform: translateX(-50%);
+  width: 100%;
+  height: auto;
 }
 
 .excerpt-navigation {
@@ -662,38 +621,6 @@ h2 em {
 
 .excerpt-nav-link:hover {
   color: #ffe0ad;
-}
-
-.excerpt-footer {
-  position: relative;
-  padding: 1.15rem 0 1.75rem;
-  border-top: 1px solid rgba(217, 155, 66, 0.65);
-  color: var(--paper);
-  text-align: center;
-}
-
-.excerpt-footer > span {
-  position: absolute;
-  top: -0.75rem;
-  left: 50%;
-  padding: 0 0.55rem;
-  background: var(--night);
-  color: var(--gold-light);
-  font-size: 1.15rem;
-  transform: translateX(-50%);
-}
-
-.excerpt-footer p {
-  margin: 0 0 0.25rem;
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.excerpt-footer cite {
-  color: var(--gold-light);
-  font-family: var(--sans);
-  font-size: 0.75rem;
-  font-style: normal;
 }
 
 .visually-hidden {
@@ -928,7 +855,11 @@ h2 em {
 
   .excerpt-page {
     min-height: calc(100svh - 60px);
-    padding: 0 0 1rem;
+    padding: 1rem 0;
+  }
+
+  .excerpt-header .site-header-inner {
+    min-height: 60px;
   }
 
   .contact-page {
