@@ -19,6 +19,6 @@ Nyisd meg az `index.html` fájlt a böngészőben, vagy használd a VS Code Live
 - `styles.css` – reszponzív elrendezés és megjelenés
 - `app.js` – mobil navigáció
 - `images/borito.png` – a könyv borítója
-- `images/fénykép.png` – a szerző portréja
+- `images/fenykep.png` – a szerző portréja
 - `reszlet/hivatal_amely_nem_létezett.rtf` – a történet eredeti szövegfájlja
 - `reszlet/images/hivatal.png` – a történet illusztrációja
