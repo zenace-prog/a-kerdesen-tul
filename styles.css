@@ -458,13 +458,12 @@ h2 em {
 .excerpt-layout {
   display: grid;
   width: 100%;
-  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
-  align-items: center;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
+  grid-template-columns: minmax(0, 46rem);
+  justify-content: center;
 }
 
 .excerpt-story {
-  padding-block: 1rem;
+  padding-block: 2rem;
 }
 
 .excerpt-story h1 {
@@ -501,52 +500,6 @@ h2 em {
   color: var(--gold-light);
   font-style: italic;
   line-height: 1.6;
-}
-
-.excerpt-illustration {
-  min-height: 31rem;
-  margin: 0;
-  border: 1px solid rgba(217, 155, 66, 0.28);
-  border-radius: 0.45rem;
-  background-image:
-    linear-gradient(
-      90deg,
-      var(--night) 0%,
-      var(--night) 18%,
-      rgba(6, 29, 34, 0.88) 29%,
-      transparent 50%
-    ),
-    url("images/reszlet_a_konyvbol.png");
-  background-position: center, right center;
-  background-repeat: no-repeat;
-  background-size: 100% 100%, auto 300%;
-  box-shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-}
-
-.excerpt-original {
-  width: 100%;
-  margin-top: 1.25rem;
-  border-block: 1px solid rgba(217, 155, 66, 0.25);
-  color: var(--gold-light);
-  font-family: var(--sans);
-  font-size: 0.85rem;
-}
-
-.excerpt-original summary {
-  padding: 0.85rem 0;
-  cursor: pointer;
-}
-
-.excerpt-original a {
-  display: block;
-  padding-bottom: 1rem;
-}
-
-.excerpt-original img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border-radius: 0.3rem;
 }
 
 .excerpt-footer {
@@ -836,11 +789,6 @@ h2 em {
 
   .excerpt-layout {
     grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .excerpt-illustration {
-    min-height: 22rem;
   }
 }
 
@@ -1006,20 +954,14 @@ h2 em {
 
   .excerpt-layout {
     grid-template-columns: 1fr;
-    gap: 1rem;
   }
 
   .excerpt-story {
-    padding-block: 0.5rem;
+    padding-block: 1rem;
   }
 
   .excerpt-story h1 {
     font-size: clamp(2.3rem, 9vw, 3.2rem);
-  }
-
-  .excerpt-illustration {
-    min-height: 19rem;
-    background-size: 100% 100%, auto 300%;
   }
 
   .excerpt-header .site-header-inner {

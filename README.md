@@ -13,11 +13,10 @@ Nyisd meg az `index.html` fájlt a böngészőben, vagy használd a VS Code Live
 ## Fájlok
 
 - `index.html` – a könyv és a szerző bemutatása
-- `reszlet.html` – a könyvrészletet tartalmazó kép
+- `reszlet.html` – a könyvrészlet szöveges bemutatása
 - `kapcsolat.html` – Web3Forms alapú kapcsolatfelvételi űrlap
 - `kapcsolat-koszonjuk.html` – külön megnyitható köszönőoldal
 - `styles.css` – reszponzív elrendezés és megjelenés
 - `app.js` – mobil navigáció
 - `images/borito.png` – a könyv borítója
-- `images/reszlet_a_konyvbol.png` – a teljes könyvrészletoldal képe
 - `images/fénykép.png` – a szerző portréja
