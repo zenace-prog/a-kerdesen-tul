@@ -2,31 +2,30 @@ const menuToggle = document.querySelector('.menu-toggle');
 const navigation = document.querySelector('#primary-navigation');
 
 if (menuToggle && navigation) {
-  const closeMenu = () => {
-    menuToggle.setAttribute('aria-expanded', 'false');
-    menuToggle.setAttribute('aria-label', 'Navigáció megnyitása');
-    navigation.classList.remove('is-open');
+  const setMenuOpen = (isOpen) => {
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
+    menuToggle.setAttribute(
+      'aria-label',
+      isOpen ? 'Navigáció bezárása' : 'Navigáció megnyitása',
+    );
+    navigation.classList.toggle('is-open', isOpen);
   };
 
   menuToggle.addEventListener('click', () => {
     const isOpen = menuToggle.getAttribute('aria-expanded') === 'true';
-    menuToggle.setAttribute('aria-expanded', String(!isOpen));
-    menuToggle.setAttribute(
-      'aria-label',
-      isOpen ? 'Navigáció megnyitása' : 'Navigáció bezárása',
-    );
-    navigation.classList.toggle('is-open', !isOpen);
+    setMenuOpen(!isOpen);
   });
 
   navigation.addEventListener('click', (event) => {
     if (event.target instanceof HTMLAnchorElement) {
-      closeMenu();
+      setMenuOpen(false);
     }
   });
 
   document.addEventListener('keydown', (event) => {
     if (event.key === 'Escape') {
-      closeMenu();
+      setMenuOpen(false);
+      // Az Escape után a fókusz a menügombra kerül, így billentyűzettel folytatható a navigáció.
       menuToggle.focus();
     }
   });
